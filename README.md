@@ -5,7 +5,10 @@ A Folder Action which automatically trashes derived data (build products) when y
 
 If the items you move to the Trash contain any `.xcodeproj` files, then any folders in DerivedData that have the same name will also be moved to the Trash. 
 
-### [Download](http://github.com/jtbandes/Trash-Corresponding-Derived-Data/downloads)
+### To download:
+Click on either the `.zip` file or the `.xip` file (a signed archive for Mountain Lion and up)!
+
+## Demo
 
 ![demo](http://i.imgur.com/chEig.gif)
 
