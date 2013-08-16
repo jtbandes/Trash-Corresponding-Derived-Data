@@ -16,14 +16,16 @@ Click on either the `.zip` file or the `.xip` file (a signed archive for Mountai
 
 For the paranoid, here is the script used to find the derived data folders (you can also open the folder action in Automator to see how it works):
 
-    DATADIR=~/Library/Developer/Xcode/DerivedData
-    
-    # bail early if there is no DerivedData directory
-    if [ ! -d "$DATADIR" ]; then exit 0; fi
-    
-    # find any Xcode projects
-    for PROJ in $(find "$@" -name "*.xcodeproj")
-    do
-      # find corresponding build output folders
-      find "$DATADIR" -maxdepth 1 -type d -name "$(basename "$PROJ" .xcodeproj)-*" -print
-    done
+```sh
+DATADIR=~/Library/Developer/Xcode/DerivedData
+
+# bail early if there is no DerivedData directory
+if [ ! -d "$DATADIR" ]; then exit 0; fi
+
+# find any Xcode projects
+for PROJ in $(find "$@" -name "*.xcodeproj")
+do
+  # find corresponding build output folders
+  find "$DATADIR" -maxdepth 1 -type d -name "$(basename "$PROJ" .xcodeproj)-*" -print
+done
+````
